@@ -12,7 +12,7 @@ export class ProductsService {
     /* this.url = 'https://panesandco.herokuapp.com'; */
     /* this.url = "https://delivery.jnc.es"; */
     /* this.url = "http://localhost:8000/api"; */
-    this.url = "http://cloudagoradelivery.audidata.es:8000/api"
+    this.url = "https://audidata.herokuapp.com/api"
   }
 
   addPhone(phone): Observable<any> {

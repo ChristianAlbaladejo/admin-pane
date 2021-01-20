@@ -12,7 +12,7 @@ export class UserService {
         /*  this.url = "https://panesandco.herokuapp.com"    */
       /* this.url = "http://localhost:8000/api"; */
          /* this.url = "http://localhost:8000/api"; */
-      this.url = "http://cloudagoradelivery.audidata.es:8000/api"
+      this.url = "https://audidata.herokuapp.com/api"
     }
 
     getIdentity() {
