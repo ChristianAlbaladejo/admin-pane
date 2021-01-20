@@ -1,0 +1,119 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-xl-12 mb-12 mb-xl-0">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="mb-0">Pedidos</h3>
+                        </div>
+                        <div class="col text-right">
+                            <!-- <a  *ngIf="viewMore" class="btn btn-sm btn-primary" (click)="loadAll()">Ver mas</a>
+                            <a  class="btn btn-sm btn-primary" *ngIf="!viewMore" (click)="load()">Ver menos</a> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <!-- Projects table -->
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">Pedido</th>
+                                <th scope="col">Precio</th>
+                                <th scope="col">userId</th>
+                                <th scope="col">Fecha realizado</th>
+                                <th scope="col">Fecha de reparto</th>
+                                <th scope="col">Notas</th>
+                                <th scope="col">Cliente</th>
+                                <th scope="col">Email</th>
+                                <th  scope="col">Teléfono</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let o of orders; let i = index">
+                                <th scope="row">
+                                    {{o.id}}
+                                </th>
+                                <td>
+                                    <a href="#" class="btn btn-success" data-toggle="modal"
+                                        [attr.data-target]="'#myModal'+i">
+                                        Ver pedido
+                                    </a>
+                                    <div class="modal fade" id="myModal{{i}}" tabindex="-1" role="dialog"
+                                        aria-labelledby="basicModal" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="myModalLabel">Pedido</h4>
+                                                    <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">×</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="table-responsive">
+                                                        <table class="table align-items-center table-flush">
+                                                            <thead class="thead-light">
+                                                                <tr>
+                                                                    <th scope="col">Id</th>
+                                                                    <th scope="col">PLU</th>
+                                                                    <th scope="col">Name</th>
+                                                                    <th scope="col">Precio</th>
+                                                                    <th scope="col">Cantidad</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <tr *ngFor="let l of o.orderLines; let i = index">
+                                                                    <td>{{l.id}}</td>
+                                                                    <td>{{l.PLU}}</td>
+                                                                    <td>{{l.name}}</td>
+                                                                    <td>{{l.costPrice}}</td>
+                                                                    <td>{{l.quantity}}</td>
+                                                                </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-default"
+                                                        data-dismiss="modal">Close</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    {{o.grossAmount | number : '1.2-2'}}
+                                </td>
+                                <td>
+                                    {{o.userId}}
+                                </td>
+                                <td>
+                                    {{o.date | date:'medium'}}
+                                </td>
+                                <td>
+                                    {{o.deliverydate | date:'medium'}}
+                                </td>
+                                <td>
+                                    {{o.orderNotes}}
+                                </td>
+                                <td>
+                                    {{o.name}} {{o.lastname}}
+                                </td>
+                                <td>
+                                    {{o.email}}
+                                </td>
+                                <td>
+                                    {{o.telefono}}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

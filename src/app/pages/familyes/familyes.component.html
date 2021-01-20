@@ -1,0 +1,89 @@
+<div class="header bg-gradient-danger pb-8 pt-5 pt-md-8">
+</div>
+<div class="container-fluid mt--7">
+    <div class="row">
+        <div class="col-xl-12 mb-12 mb-xl-0">
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="mb-0">Familias</h3>
+                        </div>
+                        <div class="col text-right">
+                            <a href="#/familyes" class="btn btn-md btn-primary" (click)="save()">Save</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <!-- Projects table -->
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col"></th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let f of family">
+                                <th scope="row">
+                                    <input type="checkbox" (change)="checked($event, f)">
+                                </th>
+                                <td>
+                                    <div>
+                                        <input class="fileInput" type="file" class="btn btn-md btn-primary"
+                                            accept="image/*" (change)="handleFileInput($event.target.files, f)">
+                                    </div>
+                                </td>
+                                <td>
+                                    <input class="form-control" (value)="f.name" [(ngModel)]="f.name" type="text">
+                                </td>
+                                <td class="delete">
+                                    <button (click)="delete(f)" class="btn btn-md btn-danger"><i class="fas fa-trash"></i></button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br>
+            <div class="card shadow">
+                <div class="card-header border-0">
+                    <div class="row align-items-center">
+                        <div class="col">
+                            <h3 class="mb-0">Crear Familia</h3>
+                        </div>
+                        <div class="col text-right">
+                            <a href="#/familyes" class="btn btn-md btn-primary" (click)="createNewFamily()">Crear</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="table-responsive">
+                    <!-- Projects table -->
+                    <table class="table align-items-center table-flush">
+                        <thead class="thead-light">
+                            <tr>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Nombre</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <div>
+                                        <input class="fileInput" type="file" class="btn btn-md btn-primary"
+                                            accept="image/*" (change)="newImage($event.target.files)">
+                                    </div>
+                                </td>
+                                <td>
+                                    <input class="form-control" (value)="newFamilyName" [(ngModel)]="newFamilyName" type="text">
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
