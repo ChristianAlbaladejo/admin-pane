@@ -31,8 +31,8 @@ export class DashboardComponent implements OnInit {
   public errorId;
   public phoneAction;
   public cases = [
-    { value: "EXTERNAL_REQUEST", name: "peticion externa" },
-    { value: "RING_GROUP", name: "peticion externa" },
+    { value: "EXTERNAL_REQUEST", name: "Petición externa" },
+    { value: "RING_GROUP", name: "Grupo de tono" },
     { value: "IVR", name: "IVR" },
     { value: "ANNOUNCEMENT", name: "Anuncio" },
     { value: "CUSTOM_VOICEMAIL", name: "Correo de voz personalizado" },
