@@ -30,7 +30,13 @@ export class DashboardComponent implements OnInit {
   public errorPhoneActionType;
   public errorId;
   public phoneAction;
-  public cases = ["EXTERNAL_REQUEST", "RING_GROUP", "IVR", "ANNOUNCEMENT", "CUSTOM_VOICEMAIL", "QUEUE", "TIME_ACTION"]
+  public cases = [
+    { value: "EXTERNAL_REQUEST", name: "peticion externa" },
+    { value: "RING_GROUP", name: "peticion externa" },
+    { value: "IVR", name: "IVR" },
+    { value: "ANNOUNCEMENT", name: "Anuncio" },
+    { value: "CUSTOM_VOICEMAIL", name: "Correo de voz personalizado" },
+    { value: "QUEUE", name: "Cola" }]
   constructor(private _productsService: ProductsService, private http: HttpClient, private router: Router) {
   }
 
@@ -133,10 +139,10 @@ export class DashboardComponent implements OnInit {
               localStorage.clear()
               this.router.navigate(['/login'])
             }
-              this.showError = true;
-              setTimeout(() => {
-                this.showError = false;
-              }, 3000);
+            this.showError = true;
+            setTimeout(() => {
+              this.showError = false;
+            }, 3000);
             console.log(error.status);
           })
         }
@@ -158,10 +164,10 @@ export class DashboardComponent implements OnInit {
         localStorage.clear()
         this.router.navigate(['/login'])
       }
-        this.showError = true;
-        setTimeout(() => {
-          this.showError = false;
-        }, 3000);
+      this.showError = true;
+      setTimeout(() => {
+        this.showError = false;
+      }, 3000);
       console.log(error.status);
     })
   }
@@ -204,10 +210,10 @@ export class DashboardComponent implements OnInit {
         localStorage.clear()
         this.router.navigate(['/login'])
       }
-        this.showError = true;
-        setTimeout(() => {
-          this.showError = false;
-        }, 3000);
+      this.showError = true;
+      setTimeout(() => {
+        this.showError = false;
+      }, 3000);
       console.log(error.status);
     })
   }
